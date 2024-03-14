@@ -28,7 +28,7 @@ def create_vector_store(content_chunks):
     vector_store = FAISS.from_texts(texts=content_chunks, embedding=embeddings)
     return vector_store
 
-def queryLLM(llm, vectorstore, question="Give me the gist of ReAct in 3 sentences"):
+def queryLLM(llm, vectorstore, question):
     qa = RetrievalQA.from_chain_type(
     llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever())
     res = qa.invoke(question)
