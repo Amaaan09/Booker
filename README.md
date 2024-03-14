@@ -1,5 +1,5 @@
 # Mr. Booker
-This project is a language model-based information retrieval system that extracts content from PDF documents, splits the content into manageable chunks, creates a vector store from the chunks, and uses a language model to answer questions based on the content.
+This Gen AI model utilizes [Retrieval Augmented Generation](https://research.ibm.com/blog/retrieval-augmented-generation-RAG) which extracts content from PDF documents, large language model to answer questions based on the content.
 
 ## Prerequisites
 The project is written in Python. You need to have Python installed on your machine. You can use the requirements.txt for the dependencies
@@ -7,7 +7,6 @@ The project is written in Python. You need to have Python installed on your mach
 ## Installing
 To install the project, clone the repository to your local machine:
 
-<!-- clone the repo as code -->
 ```bash
 git clone https://github.com/Amaaan09/Booker.git
 ```
@@ -20,7 +19,6 @@ pip install -r requirements.txt
 ## Usage
 The project contains a file named utils.py which contains several functions:
 
-<!-- bold a word  -->
 ```python
 extract_pdf_content(pdf_document)
 ```
