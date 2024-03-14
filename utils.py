@@ -11,8 +11,6 @@ LLM = HuggingFaceHub(
     model_kwargs={"temperature": 0.1, "max_length": 64,"max_new_tokens":512}
 )
 
-sample_pdf = "sample_pdf/reAct.pdf"
-
 def get_pdf_text(pdf_doc):
     text = ""
     pdf_reader = PdfReader(pdf_doc)
