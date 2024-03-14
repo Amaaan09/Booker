@@ -1,4 +1,3 @@
-from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
@@ -7,7 +6,7 @@ from PyPDF2 import PdfReader
 from langchain_community.llms.huggingface_hub import HuggingFaceHub
 
 
-llm = HuggingFaceHub(
+LLM = HuggingFaceHub(
     repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1",
     model_kwargs={"temperature": 0.1, "max_length": 64,"max_new_tokens":512}
 )
@@ -35,5 +34,6 @@ def queryLLM(llm, vectorstore, question="Give me the gist of ReAct in 3 sentence
     qa = RetrievalQA.from_chain_type(
     llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever())
     res = qa.invoke(question)
+    res = res['result']
     res = res.split("Helpful Answer:")[-1]
     return res
