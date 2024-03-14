@@ -5,7 +5,6 @@ from langchain.chains import RetrievalQA
 from PyPDF2 import PdfReader
 from langchain_community.llms.huggingface_hub import HuggingFaceHub
 from dotenv import load_dotenv
-
 load_dotenv()
 
 LLM = HuggingFaceHub(
