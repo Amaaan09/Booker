@@ -11,22 +11,22 @@ LLM = HuggingFaceHub(
     model_kwargs={"temperature": 0.1, "max_length": 64,"max_new_tokens":512}
 )
 
-def get_pdf_text(pdf_doc):
-    text = ""
-    pdf_reader = PdfReader(pdf_doc)
+def extract_pdf_content(pdf_document):
+    content = ""
+    pdf_reader = PdfReader(pdf_document)
     for page in pdf_reader.pages:
-        text += page.extract_text()
-    return text
+        content += page.extract_text()
+    return content
 
-def get_text_chunks(text):
-    text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=30, separator="\n")
-    chunks = text_splitter.split_text(text)
+def split_content_into_chunks(content):
+    content_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=30, separator="\n")
+    chunks = content_splitter.split_text(content)
     return chunks
 
-def get_vectorstore(text_chunks):
+def create_vector_store(content_chunks):
     embeddings = HuggingFaceEmbeddings()    
-    vectorstore = FAISS.from_texts(texts=text_chunks, embedding=embeddings)
-    return vectorstore
+    vector_store = FAISS.from_texts(texts=content_chunks, embedding=embeddings)
+    return vector_store
 
 def queryLLM(llm, vectorstore, question="Give me the gist of ReAct in 3 sentences"):
     qa = RetrievalQA.from_chain_type(

@@ -1,5 +1,5 @@
 import streamlit as st
-from utils import get_pdf_text, get_text_chunks, get_vectorstore, queryLLM, LLM
+from utils import extract_pdf_content, split_content_into_chunks, create_vector_store, queryLLM, LLM
 
 st.title('Mr. Booker')
 
@@ -7,9 +7,9 @@ file = st.file_uploader("Upload your book here", accept_multiple_files=False, ty
 
 @st.cache_resource(max_entries=3, ttl=3600, show_spinner="Loading...")
 def load_vectorstore(file):
-    texts = get_pdf_text(file)
-    chunks = get_text_chunks(texts)
-    return get_vectorstore(chunks)
+    texts = extract_pdf_content(file)
+    chunks = split_content_into_chunks(texts)
+    return create_vector_store(chunks)
 
 if file is not None:
 
