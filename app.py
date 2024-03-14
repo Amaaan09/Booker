@@ -12,11 +12,9 @@ def load_vectorstore(file):
     return create_vector_store(chunks)
 
 if file is not None:
-
     vectorstore = load_vectorstore(file)
 
     user_question = st.text_input("Ask your question:")
-
     if st.button('GO!'):
         if user_question == "":
             st.warning("Please ask a question")
