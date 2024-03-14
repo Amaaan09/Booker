@@ -5,6 +5,7 @@ from langchain.chains import RetrievalQA
 from PyPDF2 import PdfReader
 from langchain_community.llms.huggingface_hub import HuggingFaceHub
 from dotenv import load_dotenv
+
 load_dotenv()
 
 LLM = HuggingFaceHub(
@@ -33,6 +34,7 @@ def queryLLM(llm, vectorstore, question):
     qa = RetrievalQA.from_chain_type(
     llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever())
     res = qa.invoke(question)
+    
     res = res['result']
     res = res.split("Helpful Answer:")[-1]
     return res
