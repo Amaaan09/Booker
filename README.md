@@ -44,6 +44,6 @@ This function takes a language model, a vector store, and a question as input. I
 This project is licensed under the MIT License 
 
 ## Acknowledgments
-Thanks to HuggingFace for their language model and embeddings.
-Thanks to PyPDF2 for their PDF reading capabilities.
-Thanks to langchain and langchain_community for their text splitting and vector store capabilities.
+- HuggingFace
+- PyPDF2
+- langchain and langchain_community
