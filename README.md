@@ -1,4 +1,4 @@
-# Mr. Booker
+# Mr. PDF
 This Gen AI model utilizes [Retrieval Augmented Generation](https://research.ibm.com/blog/retrieval-augmented-generation-RAG) which extracts content from PDF documents, large language model to answer questions based on the content.
 
 ## Prerequisites
