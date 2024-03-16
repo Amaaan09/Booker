@@ -17,7 +17,11 @@ def extract_pdf_content(pdf_document):
     content = ""
     pdf_reader = PdfReader(pdf_document)
     for page in pdf_reader.pages:
-        content += page.extract_text()
+        page_content = page.extract_text()
+        if page_content is None:
+            page_content = " "
+        content += page_content
+
     return content
 
 def split_content_into_chunks(content):
