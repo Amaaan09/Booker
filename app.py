@@ -1,7 +1,7 @@
 import streamlit as st
 from utils import extract_pdf_content, split_content_into_chunks, create_vector_store, queryLLM, LLM
 
-st.title('Mr. PDF')
+st.title('Mr. Jarvis')
 
 file = st.file_uploader("Upload your book here", accept_multiple_files=False, type='pdf')
 
