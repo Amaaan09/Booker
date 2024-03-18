@@ -3,7 +3,7 @@ from utils import extract_pdf_content, split_content_into_chunks, create_vector_
 
 st.title('Mr. Jarvis')
 
-file = st.file_uploader("Upload your book here", accept_multiple_files=False, type='pdf')
+file = st.file_uploader("Upload your PDF here", accept_multiple_files=False, type='pdf')
 
 @st.cache_resource(max_entries=3, ttl=3600, show_spinner="Loading...")
 def load_vectorstore(file):
