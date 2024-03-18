@@ -8,7 +8,7 @@ The project is written in Python. You need to have Python installed on your mach
 To install the project, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/Amaaan09/Booker.git
+git clone https://github.com/Amaaan09/Mr-Jarvis.git
 ```
 
 ```bash
