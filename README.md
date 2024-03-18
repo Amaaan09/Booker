@@ -1,9 +1,9 @@
 # Mr. Jarvis
 
 This Gen AI model utilizes:
-1. [Retrieval Augmented Generation](https://research.ibm.com/blog/retrieval-augmented-generation-RAG) which extracts content from PDF documents, large language model to answer questions based on the content.
+1. [Retrieval Augmented Generation](https://research.ibm.com/blog/retrieval-augmented-generation-RAG) which extracts content from PDF documents, a large language model to answer questions based on the content.
 2. [LORA](https://huggingface.co/docs/diffusers/main/en/training/lora) for FineTuning the Gemma Model on a curated dataset of my favorite quotes for a personalized touch 
-3. [Agents](https://python.langchain.com/docs/modules/agents/) to grant the system web access to otherwise unvailable data
+3. [Agents](https://python.langchain.com/docs/modules/agents/) to grant the system web access to otherwise unavailable data
 
 ## Deployed at: 
 - [Jarvis 2.0](https://mr-jarvis.streamlit.app/)
