@@ -13,7 +13,7 @@ def load_vectorstore(file):
     return create_vector_store(chunks)
 
 if file is not None:
-    
+
     vectorstore = load_vectorstore(file)
 
     user_question = st.text_input("Ask your question:")
@@ -25,6 +25,7 @@ if file is not None:
                 res = queryLLM(LLM, vectorstore, question=user_question)
                 st.write(res)
 
+# footer
 footer="""<style>
 a:link , a:visited{
 color: white;
@@ -49,7 +50,7 @@ text-align: center;
 }
 </style>
 <div class="footer">
-<p>Do check out <a style='text-align: center;' href="https://github.com/Amaaan09" target="_blank">Jarvis 2.0</a></p>
+<p>Do check out <a style='text-align: center;' href="https://mr-jarvis.streamlit.app/" target="_blank">Jarvis 2.0</a></p>
 </div>
 """
 st.markdown(footer,unsafe_allow_html=True)
