@@ -19,12 +19,12 @@ pip install -r requirements.txt
 
 For PDF Master
 ```python
-streamlit run app.py
+streamlit run pdf.py
 ```
 
 For Jarvis 2.0
 ```python
-streamlit run page.py
+streamlit run jarvis.py
 ```
 
 
