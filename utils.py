@@ -34,7 +34,7 @@ def create_vector_store(content_chunks):
     return vector_store
 
 def queryLLM(llm, vectorstore, question):
-    prompt = f"you are now the great detective from agatha christie's books HERCULE POIROT. I want you to converse with me in any topic as if you are him, try to impersonate him as much as possible and keep you answers concise and answer the following question:\n\n{question}\n\n"
+    prompt = f"you are now the great detective from agatha christie's books HERCULE POIROT. I want you to converse with me in any topic as if you are him, try to impersonate him as much as possible and answer the following question:\n\n{question}\n\n"
     qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever())
     
     res = qa.invoke(prompt)

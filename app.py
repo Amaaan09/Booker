@@ -1,7 +1,8 @@
 import streamlit as st
 from utils import extract_pdf_content, split_content_into_chunks, create_vector_store, queryLLM, LLM
 
-st.title('Mr. Jarvis')
+st.title('Mr. Jarvis - The PDF Master')
+
 
 file = st.file_uploader("Upload your PDF here", accept_multiple_files=False, type='pdf')
 
@@ -23,3 +24,32 @@ if file is not None:
             with st.info("Processing..."):
                 res = queryLLM(LLM, vectorstore, question=user_question)
                 st.write(res)
+
+footer="""<style>
+a:link , a:visited{
+color: white;
+background-color: transparent;
+text-decoration: none;
+}
+
+a:hover,  a:active {
+color: red;
+background-color: transparent;
+text-decoration: underline;
+}
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+color: white;
+text-decoration: none;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p>Do check out <a style='text-align: center;' href="https://github.com/Amaaan09" target="_blank">Jarvis 2.0</a></p>
+</div>
+"""
+st.markdown(footer,unsafe_allow_html=True)
